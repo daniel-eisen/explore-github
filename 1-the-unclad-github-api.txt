@@ -1,14 +1,14 @@
 1. The Unclad Github API
 
 
-**Getting started with auth
+Getting started with auth
 when starting with auth there are two ways to go username and password authentication and OAuth token. Both are inititiated the first time with https authentication but the OAuth is gotten once and then does not need to use https authentication again. Username and password authentication must be perfomed on each request.  Lets get a token so we can set it and forget it.
 
 curl -u daniel-eisen -d '{"scopes":["public_repo"], "note": "A new authorization"}' https://api.github.com/authorizations
 Enter host password for user 'daniel-eisen':
 *resonse with an api key
 
-**using Auth with curl (https://curl.haxx.se/docs/manpage.html)
+using Auth with curl (https://curl.haxx.se/docs/manpage.html)
 
 -H, --header <header/@file>
 
@@ -18,7 +18,7 @@ COMMAND:
 
 curl -H "Authorization: token yourtoken" "https://api.github.com/user"
 
-**Using curl on the command line is a quick way to hit api enpoints.
+Using curl on the command line is a quick way to hit api enpoints.
 
 Calling:
 https://api.github.com
@@ -77,12 +77,12 @@ The raw response looks something like this partial which removes most entries bu
   
   Here jq first filters into the array with '.[0]' and then filters into the object the array contains with '.fork' 
   
-  ** Response Headers are important information
-  * They give information about how the response came and why a body could be blank or something unexpexted
+   Response Headers are important information
+   They give information about how the response came and why a body could be blank or something unexpexted
   
- ** Flags: -i or -v 
- * -v is the most verbose header (DNS lookup, ssl chain, request/response cycle etc..)
- * -i gives basic information about the response header
+   Flags: -i or -v 
+   -v is the most verbose header (DNS lookup, ssl chain, request/response cycle etc..)
+   -i gives basic information about the response header
  
 curl -i 'https://api.github.com'
 HTTP/1.1 200 OK
