@@ -6,32 +6,13 @@ when starting with auth there are two ways to go username and password authentic
 
 curl -u daniel-eisen -d '{"scopes":["public_repo"], "note": "A new authorization"}' https://api.github.com/authorizations
 Enter host password for user 'daniel-eisen':
-{
-  "id": 178651489,
-  "url": "https://api.github.com/authorizations/178651489",
-  "app": {
-    "name": "A new authorization",
-    "url": "https://developer.github.com/v3/oauth_authorizations/",
-    "client_id": "00000000000000000000"
-  },
-  "token": "...",
-  "hashed_token": "...",
-  "token_last_eight": "...",
-  "note": "A new authorization",
-  "note_url": null,
-  "created_at": "2018-04-06T17:54:15Z",
-  "updated_at": "2018-04-06T17:54:15Z",
-  "scopes": [
-    "public_repo"
-  ],
-  "fingerprint": null
-}
+*resonse with an api key
 
 **using Auth with curl (https://curl.haxx.se/docs/manpage.html)
 
 -H, --header <header/@file>
 
-(HTTP) Extra header to include in the request when sending HTTP to a server. You may specify any number of extra headers. Note that if you should add a custom header that has the same name as one of the internal ones curl would use, your externally set header will be used instead of the internal one. This allows you to make even trickier stuff than curl would normally do. You should not replace internally set headers without knowing perfectly well what you're doing. Remove an internal header by giving a replacement without content on the right side of the colon, as in: -H "Host:". If you send the custom header with no-value then its header must be terminated with a semicolon, such as -H "X-Custom-Header;" to send "X-Custom-Header:"
+(HTTP) Extra header to include in the request when sending HTTP to a server. You may specify any number of extra headers.
 
 COMMAND:
 
@@ -57,29 +38,7 @@ That makes the github api a hypermedia api(Building Hypermedia APIs with HTML5 a
   "emails_url": "https://api.github.com/user/emails",
   "emojis_url": "https://api.github.com/emojis",
   "events_url": "https://api.github.com/events",
-  "feeds_url": "https://api.github.com/feeds",
-  "followers_url": "https://api.github.com/user/followers",
-  "following_url": "https://api.github.com/user/following{/target}",
-  "gists_url": "https://api.github.com/gists{/gist_id}",
-  "hub_url": "https://api.github.com/hub",
-  "issue_search_url": "https://api.github.com/search/issues?q={query}{&page,per_page,sort,order}",
-  "issues_url": "https://api.github.com/issues",
-  "keys_url": "https://api.github.com/user/keys",
-  "notifications_url": "https://api.github.com/notifications",
-  "organization_repositories_url": "https://api.github.com/orgs/{org}/repos{?type,page,per_page,sort}",
-  "organization_url": "https://api.github.com/orgs/{org}",
-  "public_gists_url": "https://api.github.com/gists/public",
-  "rate_limit_url": "https://api.github.com/rate_limit",
-  "repository_url": "https://api.github.com/repos/{owner}/{repo}",
-  "repository_search_url": "https://api.github.com/search/repositories?q={query}{&page,per_page,sort,order}",
-  "current_user_repositories_url": "https://api.github.com/user/repos{?type,page,per_page,sort}",
-  "starred_url": "https://api.github.com/user/starred{/owner}{/repo}",
-  "starred_gists_url": "https://api.github.com/gists/starred",
-  "team_url": "https://api.github.com/teams",
-  "user_url": "https://api.github.com/users/{user}",
-  "user_organizations_url": "https://api.github.com/user/orgs",
-  "user_repositories_url": "https://api.github.com/users/{user}/repos{?type,page,per_page,sort}",
-  "user_search_url": "https://api.github.com/search/users?q={query}{&page,per_page,sort,order}"
+
 }
 
 Accessing this info at the command line can be made simple by using jq a utility you can install with brew.
@@ -101,26 +60,16 @@ The raw response looks something like this partial which removes most entries bu
       "name": "explore-github",
       "full_name": "daniel-eisen/explore-github",
       "owner": {
-        "login": "daniel-eisen",
-        "id": 38080860
+        "login": "daniel-eisen"
       },
       "private": false,
       "html_url": "https://github.com/daniel-eisen/explore-github",
-      "description": "Follows the book building tools with github",
-      "fork": false,
-      "url": "https://api.github.com/repos/daniel-eisen/explore-github",
       "license": {
         "key": "mit",
-        "name": "MIT License",
-        "spdx_id": "MIT",
-        "url": "https://api.github.com/licenses/mit"
       },
-      "forks": 0,
-      "open_issues": 0,
-      "watchers": 0,
-      "default_branch": "master"
+      "forks": 0
     }
-  ]
+ ]
   
   Say I just want to know if this is a fork using jq: (https://stedolan.github.io/jq/)
   
