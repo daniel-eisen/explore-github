@@ -20,6 +20,19 @@ curl -H "Authorization: token yourtoken" "https://api.github.com/user"
 
 Using curl on the command line is a quick way to hit api enpoints.
 
+
+Status Codes
+
+SUCCESS - 200 OR 201
+200 - github.com will return a status code of 200 when the endpoint and endpoint parameters are correct
+201 - github.com will return a status code of 201 when the endpoint and endpoint parameters are correct and content is added
+
+Failures - 400 or 422
+400 - invalid JSON 
+422 - valid json with wrong key value pairs
+
+
+
 Calling:
 https://api.github.com
 
