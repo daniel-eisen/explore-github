@@ -5,7 +5,7 @@ Using curl on the command line is a quick way to hit api enpoints.
 Calling:
 https://api.github.com
 
-We get a JSON Response even thought we did not ask for anything specific.
+We get a JSON Response even though we did not ask for anything specific.
 We do net need to provide AUTH for this endpoint.
 This endpoint is a map to all the other endpoints including query parameters.
 That makes the github api a hypermedia api(Building Hypermedia APIs with HTML5 and NodeCreating Evolvable Hypermedia Applications)
